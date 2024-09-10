@@ -290,7 +290,7 @@ void FloatsToUints(const MotorCMD *param, uint8_t *data)
 
 使用`deep_motor_sdk.h`中的`UintsToFloats()`函数可以将uint值映射回float类型。例程会持续检查关节电机状态，若关节电机状态异常，将会在终端中打印异常错误。
 
-#### 4.3 关节失能与资源回收
+### 4.3 关节失能与资源回收
 在终端中输入`Ctrl+C`，例程会停止发送电机控制命令并打印`[INFO] main thread loop stoped`，停止检查关节状态，并发送电机失能命令、回收资源，最终程序会显示`[INFO] Ended single motor control`。
 
 <img src="./doc/single_motor_1.png"/>
