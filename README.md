@@ -284,7 +284,7 @@ void FloatsToUints(const MotorCMD *param, uint8_t *data)
 
 随后通过 SendRecv() 函数，例程会向关节电机发送 CAN 命令，并在终端中打印命令信息（参考**single_motor_0.png**中`can_id:129`的CAN命令）。
 #### 4.2.3 使用DrMotorCan进行数据接收
-在完成**4.2.2 使用DrMotorCan进行数据发送**后，关节电机会返回CAN命令及运动信息，以**single_motor_0.png**中CAN ID为145的CAN命令为例，参考上述处理过程的逆过程，可以得出关节电机返回的信息含义。已知该命令为电机控制的驱动器返回命令，返回的CAN DATA[0]~[7]为{24，111，207，224，127，3，128，57}，逆推过程如下（data[7]中bit0的参数名为温度标识位）：
+在完成**4.2.2 使用DrMotorCan进行数据发送**后，关节电机会返回CAN命令及运动信息，以**single_motor_0.png**中`CAN ID:145`的CAN命令为例，参考上述处理过程的逆过程，可以得出关节电机返回的信息含义。已知该命令为电机控制的驱动器返回命令，返回的CAN DATA[0]-[7]为{24，111，207，224，127，3，128，57}，逆推过程如下（data[7]中bit0的参数名为温度标识位）：
 
 <img src="./doc/sheet1.png"/>
 
